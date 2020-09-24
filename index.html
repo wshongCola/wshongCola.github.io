@@ -4,7 +4,7 @@
 <title>Welcome to Results of Single Target SAR 3D Reconstruction Based on Deep Learning</title>
 <meta name="generator" content="Bluefish 2.2.10" >
 <meta name="author" content="wshong" >
-<meta name="date" content="2020-09-24T15:04:39+0800" >
+<meta name="date" content="2020-09-24T17:00:47+0800" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div style="text-align: left;"><b><h2>Dataset Division</h2></b></div>
-		<table border=1 cellspacing=0 cellpadding=0>
+		<table border=1 cellspacing=0 cellpadding=5>
 			<tr>
 				<td></td>
 				<td colspan="2"><div style="text-align: center;">Training Set(8 cars in total)</div></td>
@@ -44,10 +44,102 @@
 				<td><img src="figs/TacomaSARFullSamplingBPImage.png" width="300" alt=""></td>
 			</tr>
 		</table>
-	<div style="text-align: left;"><b><h2>Experiment Results Without Noise</h2></b></div>
-	
-	<div style="text-align: left;"><b><h2>Experiment Results With Multiplicative Rayleigh Noise. SNR = 5</h2></b></div>
-	
-	<div style="text-align: left;"><b><h2>Experiment Results With Multiplicative Rayleigh Noise. SNR = 10</h2></b></div>
+	<div style="text-align: left;"><b><h2>Experiment Results Without Noise(Error = |Pred - GT|/(GT + epsilon))</h2></b></div>
+		<table border=1 cellspacing=0 cellpadding=5>
+			<tr>
+				<td></td>
+					<td>Input(3 Tracks BP)</td>
+					<td>Predicted</td>
+					<td>Comparison</td>
+					<td>Error Map(NMSE)</td>
+			</tr>
+			<tr>
+				<td>MPV</td>
+				<td><img src="figs/WithoutNoiseMPV-IMG.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-PRD.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-CMP.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-DLT.png" width="300" height="183" alt=""></td>
+			</tr>
+			<tr>
+				<td>Pickup</td>
+				<td><img src="figs/WithoutNoisePickup-IMG.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-PRD.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-CMP.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-DLT.png" width="300" height="183" alt=""></td>
+			</tr>
+		</table>	
+		<table border=1 cellspacing=0 cellpadding=5>
+			<caption>Dominant Scatterers Error Histograms)</caption>
+			<tr>
+				<td></td>
+				<td><div style="text-align: center;">0~0.001*</div></td>
+				<td><div style="text-align: center;">0.001~0.01</div></td>
+				<td><div style="text-align: center;">0.01~0.05</div></td>
+				<td><div style="text-align: center;">0.05~0.1</div></td>
+			</tr>
+			<tr>
+				<td>MPV</td>
+				<td><img src="figs/WithoutNoiseMPV-0-0001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-0001-001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-001-005.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoiseMPV-005-01.png" width="300" height="150" alt=""></td>
+			</tr>
+			<tr>
+				<td>Pickup</td>
+				<td><img src="figs/WithoutNoisePickup-0-0001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-0001-001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-001-005.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithoutNoisePickup-005-01.png" width="300" height="150" alt=""></td>
+			</tr>
+		</table>
+		* means the strongest points of GT. We compare predicted points and raw 3 tracks BP points in locations of these corresponding strongest points 
+	<div style="text-align: left;"><b><h2>Experiment Results With Multiplicative Rayleigh Noise. SNR = 10(Error = |Pred - GT|/(GT + epsilon))</h2></b></div>
+		<table border=1 cellspacing=0 cellpadding=5>
+			<tr>
+				<td></td>
+					<td>Input(3 Tracks BP)</td>
+					<td>Predicted</td>
+					<td>Comparison</td>
+					<td>Error Map(NMSE)</td>
+			</tr>
+			<tr>
+				<td>MPV</td>
+				<td><img src="figs/WithNoiseMPV-IMG.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-PRD.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-CMP.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-DLT.png" width="300" height="183" alt=""></td>
+			</tr>
+			<tr>
+				<td>Pickup</td>
+				<td><img src="figs/WithNoisePickup-IMG.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoisePickup-PRD.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoisePickup-CMP.png" width="300" height="183" alt=""></td>
+				<td><img src="figs/WithNoisePickup-DLT.png" width="300" height="183" alt=""></td>
+			</tr>
+		</table>	
+		<table border=1 cellspacing=0 cellpadding=5>
+			<caption>Dominant Scatterers Error Histograms</caption>
+			<tr>
+				<td></td>
+				<td><div style="text-align: center;">0~0.001</div></td>
+				<td><div style="text-align: center;">0.001~0.01</div></td>
+				<td><div style="text-align: center;">0.01~0.05</div></td>
+				<td><div style="text-align: center;">0.05~0.1</div></td>
+			</tr>
+			<tr>
+				<td>MPV</td>
+				<td><img src="figs/WithNoiseMPV-0-0001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-0001-001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-001-005.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoiseMPV-005-01.png" width="300" height="150" alt=""></td>
+			</tr>
+			<tr>
+				<td>Pickup</td>
+				<td><img src="figs/WithNoisePickup-0-0001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoisePickup-0001-001.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoisePickup-001-005.png" width="300" height="150" alt=""></td>
+				<td><img src="figs/WithNoisePickup-005-01.png" width="300" height="150" alt=""></td>
+			</tr>
+		</table>
 </body>
 </html>
