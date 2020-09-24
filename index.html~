@@ -4,7 +4,7 @@
 <title></title>
 <meta name="generator" content="Bluefish 2.2.10" >
 <meta name="author" content="wshong" >
-<meta name="date" content="2020-09-24T11:03:57+0800" >
+<meta name="date" content="2020-09-24T10:56:03+0800" >
 <meta name="copyright" content="">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -15,6 +15,6 @@
 <meta http-equiv="expires" content="0">
 </head>
 <body>
-<img src="./figs/rlt_delta-vmax1.png" alt="">
+<img src="./figs/training_procedure.eps" alt="">
 </body>
 </html>
